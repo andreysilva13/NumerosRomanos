@@ -22,12 +22,7 @@ namespace NumerosRomanos.ConsoleApp
 
         private List<string> valoresQuePodemDiminuir = new List<string>()
         {
-            "u",
-            "m",
-            "c",
-            "I",
-            "X",
-            "C"        
+            "u", "m", "c", "I", "X", "C"
         };
 
         public int NumerosRomanosParaArabicos(string numeroRomano)
@@ -69,16 +64,6 @@ namespace NumerosRomanos.ConsoleApp
             return saida;
         }
 
-        private bool ProximoValorEhMaiorQueOAtual(string valor, string proximoValor)
-        {
-            return valoresConvertidos[proximoValor] > valoresConvertidos[valor];
-        }
-
-        private static bool PodeAvancarMaisUmaPosicao(char[] valoresParaConversao, int i)
-        {
-            return i + 1 < valoresParaConversao.Length;
-        }
-
         private static string replaceNumerosBugados(string str)
         {
             str = str.ToUpper();
@@ -88,6 +73,16 @@ namespace NumerosRomanos.ConsoleApp
             str = str.Replace("X̄", "m");
 
             return str;
+        }
+
+        private bool ProximoValorEhMaiorQueOAtual(string valor, string proximoValor)
+        {
+            return valoresConvertidos[proximoValor] > valoresConvertidos[valor];
+        }
+
+        private static bool PodeAvancarMaisUmaPosicao(char[] valoresParaConversao, int i)
+        {
+            return i + 1 < valoresParaConversao.Length;
         }
     }
 }
